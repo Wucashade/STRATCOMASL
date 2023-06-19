@@ -19,7 +19,7 @@ class Window{
         void update();
         void eventManager();
         void render();
-        SDL_Renderer* renderer;
+        static SDL_Renderer* renderer;
         
     private:
 

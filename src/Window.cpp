@@ -1,7 +1,7 @@
 #include "../include/Window.hpp"
 
 
-
+SDL_Renderer* Window::renderer = nullptr;
 
 Window::Window(){};
 
