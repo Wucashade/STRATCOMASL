@@ -1,0 +1,3 @@
+/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles/STRATCOMALS.dir
+/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles/edit_cache.dir
+/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles/rebuild_cache.dir
