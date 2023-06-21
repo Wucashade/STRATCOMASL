@@ -821,6 +821,7 @@ CMakeFiles/STRATCOMALS.dir/src/Map.cpp.o
  /opt/homebrew/include/SDL2/close_code.h
  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/include/Window.hpp
  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/include/Map.hpp
+ /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 
 CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o
  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Window.cpp
@@ -1641,6 +1642,7 @@ CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o
  /opt/homebrew/include/SDL2/SDL_version.h
  /opt/homebrew/include/SDL2/begin_code.h
  /opt/homebrew/include/SDL2/close_code.h
+ /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 
 CMakeFiles/STRATCOMALS.dir/src/main.cpp.o
  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/main.cpp
@@ -2461,4 +2463,5 @@ CMakeFiles/STRATCOMALS.dir/src/main.cpp.o
  /opt/homebrew/include/SDL2/SDL_version.h
  /opt/homebrew/include/SDL2/begin_code.h
  /opt/homebrew/include/SDL2/close_code.h
+ /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 

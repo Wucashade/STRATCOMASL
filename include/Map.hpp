@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<fstream>
+#include<string>
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -19,6 +20,15 @@ class Map{
 
         void renderBackground();
         void renderBorder();
+        int getMapWidth(std::string fileName);
+        int getMapHeight(std::string fileName);
+        void moveMapUp();
+        void moveMapDown();
+        void moveMapLeft();
+        void moveMapRight();
+
+        static int mapTopLeftX;
+        static int mapTopLeftY;
 
     private:
 

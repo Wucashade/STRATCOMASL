@@ -13,5 +13,5 @@ int main(){
     window->close();
     delete(window);
 
-    
+    return 0;
 }

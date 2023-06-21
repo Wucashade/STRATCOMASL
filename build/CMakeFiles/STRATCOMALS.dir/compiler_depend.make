@@ -819,7 +819,8 @@ CMakeFiles/STRATCOMALS.dir/src/Map.cpp.o: /Users/lukaszwasela/Documents/GitHub/S
   /opt/homebrew/include/SDL2/begin_code.h \
   /opt/homebrew/include/SDL2/close_code.h \
   /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/include/Window.hpp \
-  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/include/Map.hpp
+  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/include/Map.hpp \
+  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 
 CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o: /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Window.cpp \
   /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/include/Window.hpp \
@@ -1638,7 +1639,8 @@ CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o: /Users/lukaszwasela/Documents/GitHu
   /opt/homebrew/include/SDL2/SDL.h \
   /opt/homebrew/include/SDL2/SDL_version.h \
   /opt/homebrew/include/SDL2/begin_code.h \
-  /opt/homebrew/include/SDL2/close_code.h
+  /opt/homebrew/include/SDL2/close_code.h \
+  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 
 CMakeFiles/STRATCOMALS.dir/src/main.cpp.o: /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/iostream \
@@ -2457,7 +2459,8 @@ CMakeFiles/STRATCOMALS.dir/src/main.cpp.o: /Users/lukaszwasela/Documents/GitHub/
   /opt/homebrew/include/SDL2/SDL.h \
   /opt/homebrew/include/SDL2/SDL_version.h \
   /opt/homebrew/include/SDL2/begin_code.h \
-  /opt/homebrew/include/SDL2/close_code.h
+  /opt/homebrew/include/SDL2/close_code.h \
+  /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h
 
 
 /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Window.cpp:
@@ -3607,6 +3610,8 @@ CMakeFiles/STRATCOMALS.dir/src/main.cpp.o: /Users/lukaszwasela/Documents/GitHub/
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_uintptr_t.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/float.h:
+
+/Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__type_traits/add_volatile.h:
 
