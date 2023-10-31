@@ -20,15 +20,20 @@ class Map{
 
         void renderBackground();
         void renderBorder();
+        void renderUI();
         int getMapWidth(std::string fileName);
         int getMapHeight(std::string fileName);
         void moveMapUp();
         void moveMapDown();
         void moveMapLeft();
         void moveMapRight();
+        void zoomIn();
+        void zoomOut();
 
         static int mapTopLeftX;
         static int mapTopLeftY;
+        static double mapScale;
+        static int uIHeight;
 
     private:
 

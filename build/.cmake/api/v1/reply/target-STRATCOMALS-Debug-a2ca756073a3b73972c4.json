@@ -155,7 +155,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/opt/homebrew/Cellar/sdl2_image/2.6.3/lib/libSDL2_image.dylib",
+				"fragment" : "/opt/homebrew/Cellar/sdl2_image/2.6.3_2/lib/libSDL2_image.dylib",
 				"role" : "libraries"
 			}
 		],

@@ -93,6 +93,12 @@ void Window::eventManager()
                     case SDLK_LEFT:
                         map->moveMapLeft();
                         break;
+                    case SDLK_EQUALS:
+                        map->zoomIn();
+                        break;
+                    case SDLK_MINUS:
+                        map->zoomOut();
+                        break;
                     default:
                         break;
                 }

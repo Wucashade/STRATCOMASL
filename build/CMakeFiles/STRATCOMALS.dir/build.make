@@ -124,7 +124,7 @@ STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/main.cpp.o
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/Map.cpp.o
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/build.make
-STRATCOMALS: /opt/homebrew/Cellar/sdl2_image/2.6.3/lib/libSDL2_image.dylib
+STRATCOMALS: /opt/homebrew/Cellar/sdl2_image/2.6.3_2/lib/libSDL2_image.dylib
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable STRATCOMALS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/STRATCOMALS.dir/link.txt --verbose=$(VERBOSE)
