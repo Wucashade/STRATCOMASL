@@ -18,7 +18,7 @@ void Map::render(){
     renderBackground();
     renderBorder();
     renderUI();
-    // menu->render();
+    menu->render();
 }
 
 void Map::renderBackground(){

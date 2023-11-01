@@ -18,7 +18,11 @@ void Menu::render(){
 
 void Menu::renderToolMenu(){
     SDL_Rect toolMenu;
-    buildRect(toolMenu, 100, 100, 100, 100);
+    toolMenu.w = 100;
+    toolMenu.h = 100;
+    toolMenu.x = 100;
+    toolMenu.y = 100;
+    //buildRect(toolMenu, 100, 100, 100, 100);
     SDL_SetRenderDrawColor(Window::renderer, 120,120,120, 255);
     SDL_RenderFillRect(Window::renderer, &toolMenu);
 }
