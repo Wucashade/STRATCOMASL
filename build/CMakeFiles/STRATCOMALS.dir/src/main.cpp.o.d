@@ -817,4 +817,5 @@ CMakeFiles/STRATCOMALS.dir/src/main.cpp.o: \
   /opt/homebrew/include/SDL2/SDL_version.h \
   /opt/homebrew/include/SDL2/begin_code.h \
   /opt/homebrew/include/SDL2/close_code.h \
+  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/../include/../include/Menu.hpp \
   /Library/Frameworks/SDL2_ttf.framework/Headers/SDL_ttf.h

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/STRATCOMALS.dir/src/Map.cpp.o"
   "CMakeFiles/STRATCOMALS.dir/src/Map.cpp.o.d"
+  "CMakeFiles/STRATCOMALS.dir/src/Menu.cpp.o"
+  "CMakeFiles/STRATCOMALS.dir/src/Menu.cpp.o.d"
   "CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o"
   "CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o.d"
   "CMakeFiles/STRATCOMALS.dir/src/main.cpp.o"

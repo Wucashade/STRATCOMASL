@@ -33,6 +33,8 @@ void Window::init(const char* title, int positionX, int positionY){
             else{
                 std::cout << "Renderer created" << '\n';
                 SDL_SetRenderDrawColor(renderer, 121, 121, 121, 255);
+                map = new Map();
+                menu = new Menu();
                 map->init();
                 isRunning = 1;
             }
@@ -56,6 +58,8 @@ void Window::render(){
     SDL_RenderClear(renderer);
 
     map->render();
+
+    menu->render();
 
     SDL_RenderPresent(renderer);
 }
@@ -98,6 +102,9 @@ void Window::eventManager()
                         break;
                     case SDLK_MINUS:
                         map->zoomOut();
+                        break;
+                    case SDL_MOUSEBUTTONDOWN:
+                        menu->handleMouseButtonDown(windowEvent.button);
                         break;
                     default:
                         break;

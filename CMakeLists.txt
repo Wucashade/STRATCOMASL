@@ -5,6 +5,7 @@
 # Add source to this project's executable.
 cmake_minimum_required(VERSION 3.0)
 
+
 set(APPEND CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 find_library(SDL2_LIBRARY NAME SDL2)
@@ -20,7 +21,8 @@ message ([STATUS] "SDL2_TTF_INCLUDE_DIR" ${SDL2_TTF_INCLUDE_DIR})
 
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_TFF_INCLUDE_DIRS})
 
-add_executable (STRATCOMALS "src/main.cpp" "src/Window.cpp" "src/Map.cpp")
+add_executable (STRATCOMALS "src/main.cpp" "src/Window.cpp" "src/Map.cpp" "src/Menu.cpp")
+
 
 
 target_link_libraries(STRATCOMALS ${SDL2_LIBRARIES} SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf)

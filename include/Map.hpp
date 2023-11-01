@@ -8,6 +8,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
+#include "../include/Menu.hpp"
+
 class Map{
 
     public:
@@ -37,7 +39,7 @@ class Map{
 
     private:
 
-
+    Menu* menu;
 };
 
 #endif

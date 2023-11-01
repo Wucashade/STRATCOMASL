@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "../include/Map.hpp"
+#include "../include/Menu.hpp"
 
 //Include SDL headers
 #include<SDL.h>
@@ -34,6 +35,7 @@ class Window{
         bool isRunning;
         SDL_Window* window;
         Map* map;
+        Menu* menu;
         
 
 };

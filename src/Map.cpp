@@ -1,6 +1,7 @@
 #include "../include/Map.hpp"
 #include "../include/Window.hpp"
 
+
 int Map::mapTopLeftX;
 int Map::mapTopLeftY;
 double Map::mapScale;
@@ -10,12 +11,14 @@ void Map::init(){
     mapTopLeftX = mapTopLeftY = 0;
     mapScale = 1;
     uIHeight = 50;
+    menu = new Menu();
 }
 
 void Map::render(){
     renderBackground();
     renderBorder();
     renderUI();
+    // menu->render();
 }
 
 void Map::renderBackground(){
