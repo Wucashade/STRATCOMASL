@@ -1,5 +1,6 @@
 #include "../include/Menu.hpp"
 #include "../include/Window.hpp"
+#include "../include/CustomSDLFunctions.hpp"
 
 
 Menu::Menu(){
@@ -16,29 +17,32 @@ void Menu::render(){
 }
 
 void Menu::renderToolMenu(){
-    SDL_Rect toolMenu;
-    buildRect(toolMenu, 100, 100, getMouseClickPosX(), getMouseClickPosY());
-    SDL_SetRenderDrawColor(Window::renderer, 120,120,120, 255);
-    SDL_RenderFillRect(Window::renderer, &toolMenu);
+    SDL_Texture* words;
+    SDL_Surface* surface;
+    
+    
+    TTF_Font* uiFont = TTF_OpenFont("../fonts/abel/abel-regular.ttf", 12);
+    
+    
+    drawFilledRect(Window::renderer, 150, 300, getMouseClickPosX(), getMouseClickPosY(), {120,120,120,255});
+  
 }
 
 void Menu::handleMouseButtonDown(SDL_MouseButtonEvent& b){
+    
     if(b.button == SDL_BUTTON_RIGHT){
         int x, y;
         SDL_GetMouseState(&x, &y);
         setMouseClickPos(x,y);
         setToolMenuStatus(1);
         std::cout << getMouseClickPosX();
+    }else if(b.button == SDL_BUTTON_LEFT && getToolMenuStatus() == 1){
+        setToolMenuStatus(0);
     }
     
 }
 
-void Menu::buildRect(SDL_Rect& box, int width, int height, int xPos, int yPos){
-    box.w = width;
-    box.h = height;
-    box.x = xPos;
-    box.y = yPos;
-}
+
 
 bool Menu::getInfoMenuStatus(){
     return infoMenuOn;

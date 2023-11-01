@@ -129,6 +129,30 @@ STRATCOMALS/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/build
 .PHONY : STRATCOMALS/fast
 
+src/CustomSDLFunctions.o: src/CustomSDLFunctions.cpp.o
+.PHONY : src/CustomSDLFunctions.o
+
+# target to build an object file
+src/CustomSDLFunctions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.o
+.PHONY : src/CustomSDLFunctions.cpp.o
+
+src/CustomSDLFunctions.i: src/CustomSDLFunctions.cpp.i
+.PHONY : src/CustomSDLFunctions.i
+
+# target to preprocess a source file
+src/CustomSDLFunctions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.i
+.PHONY : src/CustomSDLFunctions.cpp.i
+
+src/CustomSDLFunctions.s: src/CustomSDLFunctions.cpp.s
+.PHONY : src/CustomSDLFunctions.s
+
+# target to generate assembly for a file
+src/CustomSDLFunctions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.s
+.PHONY : src/CustomSDLFunctions.cpp.s
+
 src/Map.o: src/Map.cpp.o
 .PHONY : src/Map.o
 
@@ -234,6 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... STRATCOMALS"
+	@echo "... src/CustomSDLFunctions.o"
+	@echo "... src/CustomSDLFunctions.i"
+	@echo "... src/CustomSDLFunctions.s"
 	@echo "... src/Map.o"
 	@echo "... src/Map.i"
 	@echo "... src/Map.s"

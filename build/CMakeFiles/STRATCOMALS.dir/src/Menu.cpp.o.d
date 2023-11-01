@@ -819,4 +819,5 @@ CMakeFiles/STRATCOMALS.dir/src/Menu.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/../include/../include/Menu.hpp
+  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/../include/../include/Menu.hpp \
+  /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/../include/CustomSDLFunctions.hpp

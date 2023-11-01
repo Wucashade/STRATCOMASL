@@ -14,14 +14,12 @@ class Menu{
     ~Menu();
 
     void render();
-
     void renderToolMenu();
 
     bool getInfoMenuStatus();
     void setInfoMenuStatus(bool status);
     bool getToolMenuStatus();
     void setToolMenuStatus(bool status);
-    void buildRect(SDL_Rect& box, int width, int height, int xPos, int yPos);
     void setMouseClickPos(int x, int y);
     int getMouseClickPosX();
     int getMouseClickPosY();

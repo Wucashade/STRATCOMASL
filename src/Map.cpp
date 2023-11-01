@@ -68,7 +68,10 @@ void Map::renderBackground(){
 }
 
 void Map::renderUI(){
+    
+
     SDL_Rect userInterface;
+    
 
     userInterface.w = Window::windowWidth;
     userInterface.h = uIHeight;
