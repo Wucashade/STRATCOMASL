@@ -23,7 +23,7 @@ void Menu::renderToolMenu(){
 }
 
 void Menu::handleMouseButtonDown(SDL_MouseButtonEvent& b){
-    if(b.button == SDL_BUTTON_LEFT){
+    if(b.button == SDL_BUTTON_RIGHT){
         int x, y;
         SDL_GetMouseState(&x, &y);
         setMouseClickPos(x,y);
