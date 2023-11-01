@@ -80,6 +80,9 @@ void Window::eventManager()
                     resize(windowEvent.window.data1, windowEvent.window.data2);
                 }
                 break;
+            case SDL_MOUSEBUTTONDOWN:
+                map->handleMouseButtonDown(windowEvent.button);
+                break;
             case SDL_KEYDOWN:
                 switch(windowEvent.key.keysym.sym){
                     case SDLK_UP:
@@ -100,9 +103,7 @@ void Window::eventManager()
                     case SDLK_MINUS:
                         map->zoomOut();
                         break;
-                    case SDL_MOUSEBUTTONDOWN:
-                        menu->handleMouseButtonDown(windowEvent.button);
-                        break;
+                    
                     default:
                         break;
                 }

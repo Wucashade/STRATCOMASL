@@ -35,7 +35,6 @@ class Window{
         bool isRunning;
         SDL_Window* window;
         Map* map;
-        Menu* menu;
         
 
 };

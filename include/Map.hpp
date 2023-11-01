@@ -31,6 +31,7 @@ class Map{
         void moveMapRight();
         void zoomIn();
         void zoomOut();
+        void handleMouseButtonDown(SDL_MouseButtonEvent& b);
 
         static int mapTopLeftX;
         static int mapTopLeftY;

@@ -10,34 +10,30 @@ Menu::Menu(){
 }
 
 void Menu::render(){
-    renderToolMenu();
-    // if(toolMenuOn == 1){
-    //     renderToolMenu();
-    // }
+    if(toolMenuOn == 1){
+        renderToolMenu();
+    }
 }
 
 void Menu::renderToolMenu(){
     SDL_Rect toolMenu;
-    toolMenu.w = 100;
-    toolMenu.h = 100;
-    toolMenu.x = 100;
-    toolMenu.y = 100;
-    //buildRect(toolMenu, 100, 100, 100, 100);
+    buildRect(toolMenu, 100, 100, getMouseClickPosX(), getMouseClickPosY());
     SDL_SetRenderDrawColor(Window::renderer, 120,120,120, 255);
     SDL_RenderFillRect(Window::renderer, &toolMenu);
 }
 
 void Menu::handleMouseButtonDown(SDL_MouseButtonEvent& b){
-    if(b.button == SDL_BUTTON_RIGHT){
+    if(b.button == SDL_BUTTON_LEFT){
         int x, y;
         SDL_GetMouseState(&x, &y);
         setMouseClickPos(x,y);
         setToolMenuStatus(1);
+        std::cout << getMouseClickPosX();
     }
     
 }
 
-void Menu::buildRect(SDL_Rect box, int width, int height, int xPos, int yPos){
+void Menu::buildRect(SDL_Rect& box, int width, int height, int xPos, int yPos){
     box.w = width;
     box.h = height;
     box.x = xPos;

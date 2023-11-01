@@ -139,3 +139,7 @@ void Map::zoomOut(){
         std::cout << "Zoomed out" << "\n";
     }
 }
+
+void Map::handleMouseButtonDown(SDL_MouseButtonEvent& b){
+    menu->handleMouseButtonDown(b);
+}
