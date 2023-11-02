@@ -1,0 +1,9 @@
+
+*.json
+*.json
+build/CMakeFiles/Makefile2
+*.marks
+*.make
+*.cmake
+*.o
+*.d

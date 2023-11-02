@@ -21,7 +21,8 @@ message ([STATUS] "SDL2_TTF_INCLUDE_DIR" ${SDL2_TTF_INCLUDE_DIR})
 
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_TFF_INCLUDE_DIRS})
 
-add_executable (STRATCOMALS "src/main.cpp" "src/Window.cpp" "src/Map.cpp" "src/Menu.cpp" "src/CustomSDLFunctions.cpp")
+add_executable (STRATCOMALS "src/main.cpp" "src/Window.cpp" "src/Map.cpp" "src/Menu.cpp" "src/CustomSDLFunctions.cpp"
+                              "src/MapEntity.cpp" "src/Weapon.cpp" "src/Missile.cpp")
 
 
 

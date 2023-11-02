@@ -139,13 +139,58 @@ CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/CustomSDLFunctions.cpp -o CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.s
 
+CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o: CMakeFiles/STRATCOMALS.dir/flags.make
+CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o: /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/MapEntity.cpp
+CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o: CMakeFiles/STRATCOMALS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o -MF CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o.d -o CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o -c /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/MapEntity.cpp
+
+CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/MapEntity.cpp > CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.i
+
+CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/MapEntity.cpp -o CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.s
+
+CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o: CMakeFiles/STRATCOMALS.dir/flags.make
+CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o: /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Weapon.cpp
+CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o: CMakeFiles/STRATCOMALS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o -MF CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o.d -o CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o -c /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Weapon.cpp
+
+CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Weapon.cpp > CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.i
+
+CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Weapon.cpp -o CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.s
+
+CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o: CMakeFiles/STRATCOMALS.dir/flags.make
+CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o: /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Missile.cpp
+CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o: CMakeFiles/STRATCOMALS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o -MF CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o.d -o CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o -c /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Missile.cpp
+
+CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Missile.cpp > CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.i
+
+CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/src/Missile.cpp -o CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.s
+
 # Object files for target STRATCOMALS
 STRATCOMALS_OBJECTS = \
 "CMakeFiles/STRATCOMALS.dir/src/main.cpp.o" \
 "CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o" \
 "CMakeFiles/STRATCOMALS.dir/src/Map.cpp.o" \
 "CMakeFiles/STRATCOMALS.dir/src/Menu.cpp.o" \
-"CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.o"
+"CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.o" \
+"CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o" \
+"CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o" \
+"CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o"
 
 # External object files for target STRATCOMALS
 STRATCOMALS_EXTERNAL_OBJECTS =
@@ -155,10 +200,13 @@ STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/Window.cpp.o
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/Map.cpp.o
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/Menu.cpp.o
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/CustomSDLFunctions.cpp.o
+STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o
+STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o
+STRATCOMALS: CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/build.make
 STRATCOMALS: /opt/homebrew/Cellar/sdl2_image/2.6.3_2/lib/libSDL2_image.dylib
 STRATCOMALS: CMakeFiles/STRATCOMALS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable STRATCOMALS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable STRATCOMALS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/STRATCOMALS.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

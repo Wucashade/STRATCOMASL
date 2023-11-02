@@ -177,6 +177,30 @@ src/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Map.cpp.s
 .PHONY : src/Map.cpp.s
 
+src/MapEntity.o: src/MapEntity.cpp.o
+.PHONY : src/MapEntity.o
+
+# target to build an object file
+src/MapEntity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.o
+.PHONY : src/MapEntity.cpp.o
+
+src/MapEntity.i: src/MapEntity.cpp.i
+.PHONY : src/MapEntity.i
+
+# target to preprocess a source file
+src/MapEntity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.i
+.PHONY : src/MapEntity.cpp.i
+
+src/MapEntity.s: src/MapEntity.cpp.s
+.PHONY : src/MapEntity.s
+
+# target to generate assembly for a file
+src/MapEntity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/MapEntity.cpp.s
+.PHONY : src/MapEntity.cpp.s
+
 src/Menu.o: src/Menu.cpp.o
 .PHONY : src/Menu.o
 
@@ -200,6 +224,54 @@ src/Menu.s: src/Menu.cpp.s
 src/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Menu.cpp.s
 .PHONY : src/Menu.cpp.s
+
+src/Missile.o: src/Missile.cpp.o
+.PHONY : src/Missile.o
+
+# target to build an object file
+src/Missile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.o
+.PHONY : src/Missile.cpp.o
+
+src/Missile.i: src/Missile.cpp.i
+.PHONY : src/Missile.i
+
+# target to preprocess a source file
+src/Missile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.i
+.PHONY : src/Missile.cpp.i
+
+src/Missile.s: src/Missile.cpp.s
+.PHONY : src/Missile.s
+
+# target to generate assembly for a file
+src/Missile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Missile.cpp.s
+.PHONY : src/Missile.cpp.s
+
+src/Weapon.o: src/Weapon.cpp.o
+.PHONY : src/Weapon.o
+
+# target to build an object file
+src/Weapon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.o
+.PHONY : src/Weapon.cpp.o
+
+src/Weapon.i: src/Weapon.cpp.i
+.PHONY : src/Weapon.i
+
+# target to preprocess a source file
+src/Weapon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.i
+.PHONY : src/Weapon.cpp.i
+
+src/Weapon.s: src/Weapon.cpp.s
+.PHONY : src/Weapon.s
+
+# target to generate assembly for a file
+src/Weapon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/STRATCOMALS.dir/build.make CMakeFiles/STRATCOMALS.dir/src/Weapon.cpp.s
+.PHONY : src/Weapon.cpp.s
 
 src/Window.o: src/Window.cpp.o
 .PHONY : src/Window.o
@@ -264,9 +336,18 @@ help:
 	@echo "... src/Map.o"
 	@echo "... src/Map.i"
 	@echo "... src/Map.s"
+	@echo "... src/MapEntity.o"
+	@echo "... src/MapEntity.i"
+	@echo "... src/MapEntity.s"
 	@echo "... src/Menu.o"
 	@echo "... src/Menu.i"
 	@echo "... src/Menu.s"
+	@echo "... src/Missile.o"
+	@echo "... src/Missile.i"
+	@echo "... src/Missile.s"
+	@echo "... src/Weapon.o"
+	@echo "... src/Weapon.i"
+	@echo "... src/Weapon.s"
 	@echo "... src/Window.o"
 	@echo "... src/Window.i"
 	@echo "... src/Window.s"
