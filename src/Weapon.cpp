@@ -1,10 +1,7 @@
 #include "../include/Weapon.hpp"
 
-Weapon::Weapon(std::string name, int range, double weight){
-    this->name = name;
-    this->range = range;
-    this->weight = weight;
-}
+Weapon::Weapon(std::string name, int range, double weight)
+            :name(name), range(range), weight(weight){}
 
 std::string Weapon::getName(){
     return name;

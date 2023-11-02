@@ -1,10 +1,7 @@
 #include "../include/MapEntity.hpp"
 
-MapEntity::MapEntity(std::string name, int posX, int posY){
-    this->name = name;
-    this->posX = posX;
-    this->posY = posY;
-};
+MapEntity::MapEntity(std::string name, int posX, int posY)
+            :name(name), posX(posX), posY(posY){};
 
 std::string MapEntity::getName(){
     return name;
