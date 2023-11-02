@@ -15,6 +15,7 @@ Window::~Window(){};
 void Window::init(const char* title, int positionX, int positionY){
     //Attempt to initialise SDL subsystems
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0){
+        TTF_Init();
         std::cout << "Subsystems initialised" << '\n';
         //Create a window
         window = SDL_CreateWindow(title, positionX, positionY, Window::windowWidth, Window::windowHeight, SDL_WINDOW_RESIZABLE);

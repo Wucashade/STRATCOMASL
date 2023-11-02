@@ -17,15 +17,16 @@ void Menu::render(){
 }
 
 void Menu::renderToolMenu(){
-    SDL_Texture* words;
-    SDL_Surface* surface;
     
-    
-    TTF_Font* uiFont = TTF_OpenFont("../fonts/abel/abel-regular.ttf", 12);
+    TTF_Font* uiFont = TTF_OpenFont("../fonts/abel/abel-regular.ttf", 64);
+    if (!uiFont) {
+        throw std::runtime_error("Failed to open font '" + std::string("../fonts/abel/abel-regular.ttf") + "': " + TTF_GetError());
+    }
     
     
     drawFilledRect(Window::renderer, 150, 300, getMouseClickPosX(), getMouseClickPosY(), {120,120,120,255});
-  
+    drawSolidText(Window::renderer, uiFont, "CREATE", {0,0,0,255}, 150, 50, getMouseClickPosX(), getMouseClickPosY());
+    
 }
 
 void Menu::handleMouseButtonDown(SDL_MouseButtonEvent& b){
