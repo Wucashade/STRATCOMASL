@@ -9,7 +9,7 @@ class Weapon{
     public:
 
         Weapon(std::string name, int range, double weight);
-        ~Weapon();
+        ~Weapon(){};
 
         std::string getName();
         int getRange();

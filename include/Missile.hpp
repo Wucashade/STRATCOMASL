@@ -6,7 +6,7 @@
 class Missile: public Weapon{
     public:
         Missile(std::string name, int range, double weight, int posX, int posY);
-        ~Missile();
+        ~Missile(){};
 
         int getPosX();
         int getPosY();

@@ -1,5 +1,6 @@
 #include "../include/Map.hpp"
 #include "../include/Window.hpp"
+#include "../include/CustomSDLFunctions.hpp"
 
 
 int Map::mapTopLeftX;
@@ -7,17 +8,27 @@ int Map::mapTopLeftY;
 double Map::mapScale;
 int Map::uIHeight;
 
+Map::~Map() {
+    delete menu;
+    for (Missile* missile : missiles) {
+        delete missile;
+    }
+}
+
 void Map::init(){
     mapTopLeftX = mapTopLeftY = 0;
     mapScale = 1;
     uIHeight = 50;
     menu = new Menu();
+    Missile* missile = new Missile("Hellfire", 1000, 10, 200, 200);
+    missiles.push_back(missile);
 }
 
 void Map::render(){
     renderBackground();
     renderBorder();
     renderUI();
+    renderMissiles();
     menu->render();
 }
 
@@ -55,12 +66,12 @@ void Map::renderBackground(){
                 SDL_SetRenderDrawColor(Window::renderer, 34,139,34, 255);
             }
             else if(red == 21 && green == 152 && blue == 255){
-                SDL_SetRenderDrawColor(Window::renderer, 0,0,0, 255);
+                SDL_SetRenderDrawColor(Window::renderer, 135,206,250, 255);
             }
 
             SDL_RenderFillRect(Window::renderer, &newPixel);
             //SDL_RenderDrawPoint(Window::renderer, (j * mapScale), (i * mapScale));
-
+        
         }
     }
     SDL_FreeSurface(surface);
@@ -83,6 +94,12 @@ void Map::renderUI(){
     SDL_RenderFillRect(Window::renderer, &userInterface);
 
 
+}
+
+void Map::renderMissiles(){
+    for(int i = 0; i < missiles.size(); i++){
+        drawImage(Window::renderer, "../images/mapIcons/missileOpp.png", missiles[i]->getPosX(), missiles[i]->getPosY());
+    }
 }
 
 void Map::renderBorder(){

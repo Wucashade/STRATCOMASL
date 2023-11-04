@@ -11,7 +11,7 @@ class Menu{
     public:
 
     Menu();
-    ~Menu();
+    ~Menu(){};
 
     void render();
     void renderToolMenu();

@@ -31,3 +31,27 @@ void drawSolidText(SDL_Renderer* renderer, TTF_Font* font, std::string text, SDL
     SDL_DestroyTexture(words);
 
 }
+
+void drawImage(SDL_Renderer* renderer, std::string imagePath, int posX, int posY){
+    SDL_Rect rect;
+    SDL_Surface* surface = IMG_Load(imagePath.c_str());
+    if(!surface){
+        throw std::runtime_error("Failed to create text surface");
+    }
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+    if (!texture) {
+        throw std::runtime_error("Failed to create texture from text surface");
+    }
+    
+    rect.w = surface->w;
+    rect.h = surface->h;
+    rect.x = posX - (surface->w /2);
+    rect.y = posY - (surface->h /2);
+    
+    SDL_RenderCopy(renderer, texture, NULL, &rect);
+    // SDL_FreeSurface(surface);
+    SDL_DestroyTexture(texture);
+    
+
+    
+}
