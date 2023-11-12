@@ -23,6 +23,7 @@ class Menu{
     void setMouseClickPos(int x, int y);
     int getMouseClickPosX();
     int getMouseClickPosY();
+    
 
 
     void handleMouseButtonDown(SDL_MouseButtonEvent& b);

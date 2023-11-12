@@ -7,6 +7,7 @@ int Map::mapTopLeftX;
 int Map::mapTopLeftY;
 double Map::mapScale;
 int Map::uIHeight;
+double Map::mapSize;
 
 Map::~Map() {
     delete menu;
@@ -19,9 +20,11 @@ void Map::init(){
     mapTopLeftX = mapTopLeftY = 0;
     mapScale = 1;
     uIHeight = 50;
+    mapSize = 690;
     menu = new Menu();
-    Missile* missile = new Missile("Hellfire", 1000, 10, 200, 200);
+    Missile* missile = new Missile("Hellfire", 1000, 10, 200, 200, 100);
     missiles.push_back(missile);
+    calculatePixelDistance();
 }
 
 void Map::render(){
@@ -98,12 +101,22 @@ void Map::renderUI(){
 
 void Map::renderMissiles(){
     for(int i = 0; i < missiles.size(); i++){
-        drawImage(Window::renderer, "../images/mapIcons/missileOpp.png", missiles[i]->getPosX(), missiles[i]->getPosY());
+        drawImage(Window::renderer, "../images/mapIcons/missileOpp.png", 
+                    missiles[i]->getPosX() - Map::mapTopLeftX, missiles[i]->getPosY() - Map::mapTopLeftY);
     }
 }
 
 void Map::renderBorder(){
 
+}
+
+double Map::calculatePixelDistance(){
+    SDL_Surface* surface = SDL_LoadBMP("../images/map/landMap.bmp");
+    double pixelSize = Map::mapSize / surface->w;
+    std::cout << Map::mapSize << '\n';
+    std::cout << surface->w << '\n';
+    std::cout << pixelSize << '\n';
+    return pixelSize;
 }
 
 int Map::getMapWidth(std::string fileName){

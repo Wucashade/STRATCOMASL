@@ -37,11 +37,13 @@ class Map{
         void zoomIn();
         void zoomOut();
         void handleMouseButtonDown(SDL_MouseButtonEvent& b);
+        static double calculatePixelDistance();
 
         static int mapTopLeftX;
         static int mapTopLeftY;
         static double mapScale;
         static int uIHeight;
+        static double mapSize;
 
         std::vector<Missile*> missiles;
 
