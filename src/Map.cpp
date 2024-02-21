@@ -1,6 +1,8 @@
 #include "../include/Map.hpp"
 #include "../include/Window.hpp"
 #include "../include/CustomSDLFunctions.hpp"
+#include <cmath>
+
 
 
 int Map::mapTopLeftX;
@@ -25,10 +27,20 @@ void Map::init(){
     Missile* missile = new Missile("Hellfire", 1000, 10, 200, 200, 100);
     missiles.push_back(missile);
     calculatePixelDistance();
+    // GeoLocation location(37.7749, -122.4194);
+    // CartesianLocation cartesianLoc = geoToCartesian(location);
+    // std::cout << "Cartesian Coordinates: (" << cartesianLoc.x << ", " << cartesianLoc.y << ")\n";
+
+}
+
+void Map::update(){
+    for(Missile* missile : missiles){
+        missile->setPosX(missile->getPosX()+1);
+    }
 }
 
 void Map::render(){
-    renderBackground();
+    //renderBackground();
     renderBorder();
     renderUI();
     renderMissiles();
@@ -101,14 +113,20 @@ void Map::renderUI(){
 
 void Map::renderMissiles(){
     for(int i = 0; i < missiles.size(); i++){
-        drawImage(Window::renderer, "../images/mapIcons/missileOpp.png", 
-                    missiles[i]->getPosX() - Map::mapTopLeftX, missiles[i]->getPosY() - Map::mapTopLeftY);
+        drawImageWithAngle(Window::renderer, "../images/mapIcons/missileOpp.png", missiles[i]->getPosX() - Map::mapTopLeftX, 
+        missiles[i]->getPosY() - Map::mapTopLeftY, 300- Map::mapTopLeftX, 200- Map::mapTopLeftY);
     }
 }
 
 void Map::renderBorder(){
 
 }
+
+// CartesianLocation Map::geoToCartesian(const GeoLocation& location) {
+//     double x, y;
+//     location.toCartesian(x, y);
+//     return CartesianLocation(x, y);
+// }
 
 double Map::calculatePixelDistance(){
     SDL_Surface* surface = SDL_LoadBMP("../images/map/landMap.bmp");

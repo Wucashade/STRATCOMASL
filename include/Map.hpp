@@ -6,13 +6,17 @@
 #include<string>
 #include <vector>
 
-
 #include <SDL.h> 
 #include <SDL_image.h>
+
+#include <osmium/io/pbf_input.hpp>
+#include <osmium/geom/coordinates.hpp>
 
 #include "../include/Menu.hpp"
 #include "../include/Weapon.hpp"
 #include "../include/Missile.hpp"
+#include "GeoLocation.hpp"
+#include "CartesianLocation.hpp"
 
 class Map{
 
@@ -22,12 +26,17 @@ class Map{
         ~Map();
 
         void init();
+        void update();
         void render();
 
         void renderBackground();
         void renderBorder();
         void renderUI();
         void renderMissiles();
+
+        CartesianLocation geoToCartesian(const GeoLocation& location);
+
+
         int getMapWidth(std::string fileName);
         int getMapHeight(std::string fileName);
         void moveMapUp();

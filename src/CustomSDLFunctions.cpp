@@ -48,10 +48,37 @@ void drawImage(SDL_Renderer* renderer, std::string imagePath, int posX, int posY
     rect.x = posX - (surface->w /2);
     rect.y = posY - (surface->h /2);
     
+    //SDL_RenderCopyEx(renderer, texture, NULL, &rect, 90, NULL, SDL_FLIP_NONE);
     SDL_RenderCopy(renderer, texture, NULL, &rect);
     // SDL_FreeSurface(surface);
     SDL_DestroyTexture(texture);
     
+}
 
+void drawImageWithAngle(SDL_Renderer* renderer, std::string imagePath, int posX, int posY, int destPosX, int destPosY){
+    SDL_Rect rect;
+    SDL_Surface* surface = IMG_Load(imagePath.c_str());
+    if(!surface){
+        throw std::runtime_error("Failed to create text surface");
+    }
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+    if (!texture) {
+        throw std::runtime_error("Failed to create texture from text surface");
+    }
     
+    rect.w = surface->w;
+    rect.h = surface->h;
+    rect.x = posX - (surface->w /2);
+    rect.y = posY - (surface->h /2);
+    
+    double angle = calculateAngle(posX, destPosX, posY, destPosY);
+
+    SDL_RenderCopyEx(renderer, texture, NULL, &rect, angle, NULL, SDL_FLIP_NONE);
+    SDL_DestroyTexture(texture);
+    
+}
+
+double calculateAngle(int xOrg, int xDes, int yOrg, int yDes){
+    
+    return std::atan2(yDes-yOrg, xDes-xOrg) * 180/M_PI;
 }

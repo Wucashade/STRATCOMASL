@@ -51,7 +51,7 @@ void Window::init(const char* title, int positionX, int positionY){
 }
 
 void Window::update(){
-
+    map->update();
 }
 
 void Window::render(){

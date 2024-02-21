@@ -1,0 +1,55 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/lukaszwasela/Documents/GitHub/STRATCOMASL -B /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/cmake-build-debug
+CMake Deprecation Warning at CMakeLists.txt:6 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Warning (dev) at /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (SDL) does
+  not match the name of the calling package (SDL2).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  cmake/FindSDL2.cmake:198 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+  CMakeLists.txt:14 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Could NOT find SDL (missing: SDL2_LIBRARY) 
+CMake Warning (dev) at /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (SDL2TTF)
+  does not match the name of the calling package (SDL2_ttf).  This can lead
+  to problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  cmake/FindSDL2_ttf.cmake:163 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+  CMakeLists.txt:16 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+[STATUS]SDL2_INCLUDE_DIRS/Library/Frameworks/SDL2.framework/Headers
+[STATUS]SDL2_LIBRARIESSDL2_LIBRARY-NOTFOUND
+[STATUS]SDL2_IMAGE_INCLUDE_DIR/Library/Frameworks/SDL2_image.framework/Headers
+[STATUS]SDL2_TTF_INCLUDE_DIRS
+-- Configuring done (0.0s)
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+SDL2_LIBRARY
+    linked by target "STRATCOMALS" in directory /Users/lukaszwasela/Documents/GitHub/STRATCOMASL
+
+CMake Error at CMakeLists.txt:31 (target_link_libraries):
+  Target "STRATCOMALS" links to:
+
+    SDL2_image::SDL2_image
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+
+
+-- Generating done (0.0s)
+CMake Generate step failed.  Build files cannot be regenerated correctly.

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <SDL.h>
 #include "../include/Window.hpp"
-
 const int FPS = 60;
 const int FRAME_TIME_MS = 1000 / FPS;
 
@@ -11,7 +10,7 @@ int main(){
     while(window->running() == 1){
         Uint32 frameStart = SDL_GetTicks();
 
-
+        window->update();
         window->eventManager();
         window->render();
 

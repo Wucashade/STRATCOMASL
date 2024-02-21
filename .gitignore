@@ -4,7 +4,6 @@
 build/CMakeFiles/Makefile2
 *.marks
 *.make
-*.cmake
 *.o
 *.d
 *.ts
@@ -30,3 +29,4 @@ build/CMakeFiles/3.25.2/CompilerIdC/CMakeCCompilerId.c
 *.out
 *.bin
 build/CMakeCache.txt
+*.cmake
