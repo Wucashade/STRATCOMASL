@@ -16,6 +16,9 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 find_package(ZLIB REQUIRED)
+find_package(BZip2 REQUIRED)
+find_package(EXPAT REQUIRED)
+
 
 message ([STATUS] "SDL2_INCLUDE_DIRS" ${SDL2_INCLUDE_DIR})
 message ([STATUS] "SDL2_LIBRARIES" ${SDL2_LIBRARY})
@@ -26,12 +29,12 @@ include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_TFF_IN
 include_directories(${CMAKE_SOURCE_DIR}/include/protozero)
 
 add_executable (STRATCOMALS "src/main.cpp" "src/Window.cpp" "src/Map.cpp" "src/Menu.cpp" "src/CustomSDLFunctions.cpp"
-                              "src/MapEntity.cpp" "src/Weapon.cpp" "src/Missile.cpp")
+                              "src/MapEntity.cpp" "src/Weapon.cpp" "src/Missile.cpp" "src/OsmDataHandler.cpp")
 
 
 
 target_link_libraries(STRATCOMALS ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} SDL2_ttf::SDL2_ttf ${OSMIUM_LIBRARIES} 
-                      ZLIB::ZLIB)
+                      ZLIB::ZLIB BZip2::BZip2 EXPAT)
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET STRATCOMALS PROPERTY CXX_STANDARD 20)
 endif()

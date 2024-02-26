@@ -1,196 +1,114 @@
 #include "../include/Map.hpp"
 #include "../include/Window.hpp"
 #include "../include/CustomSDLFunctions.hpp"
+#include <utility>
 #include <cmath>
+
 
 
 
 int Map::mapTopLeftX;
 int Map::mapTopLeftY;
-double Map::mapScale;
+double Map::zoomLevel;
 int Map::uIHeight;
-double Map::mapSize;
 
 Map::~Map() {
-    delete menu;
-    for (Missile* missile : missiles) {
-        delete missile;
-    }
 }
 
 void Map::init(){
     mapTopLeftX = mapTopLeftY = 0;
-    mapScale = 1;
+    zoomLevel = 1;
     uIHeight = 50;
-    mapSize = 690;
-    menu = new Menu();
-    Missile* missile = new Missile("Hellfire", 1000, 10, 200, 200, 100);
-    missiles.push_back(missile);
-    calculatePixelDistance();
-    // GeoLocation location(37.7749, -122.4194);
-    // CartesianLocation cartesianLoc = geoToCartesian(location);
-    // std::cout << "Cartesian Coordinates: (" << cartesianLoc.x << ", " << cartesianLoc.y << ")\n";
 
+    auto otypes = osmium::osm_entity_bits::node | osmium::osm_entity_bits::way;
+
+    index_t index;
+    cache_t cache{index};
+
+    const char* inputFile = "../images/australia_oceania_latest.pbf";
+    osmium::io::Reader reader{inputFile, otypes};
+    osmium::apply(reader, cache, handler);
+
+    std::cout << handler.getAdministrativeBoundaryNodes().size();
+
+    reader.close();
+    
 }
 
 void Map::update(){
-    for(Missile* missile : missiles){
-        missile->setPosX(missile->getPosX()+1);
-    }
 }
 
 void Map::render(){
-    //renderBackground();
-    renderBorder();
-    renderUI();
-    renderMissiles();
-    menu->render();
+    
+    renderBackground();
 }
 
 void Map::renderBackground(){
-    int height,width;
-    Uint8 red,green,blue = 0;
-    SDL_Rect newPixel;
-    Uint32 pixel;
-    int rgb[3];
-
-    //Set width and height of drawn rectangle
-    newPixel.h = (1 * mapScale);
-    newPixel.w = (1 * mapScale);
-
-    SDL_Surface* surface = SDL_LoadBMP("../images/map/landMap.bmp");
-
+    std::vector<std::pair<double, double>> nodes = handler.getAdministrativeBoundaryNodes();
     
-    //Get the dimensions of image
-    width = surface->w;
-    height = surface->h;
+    
+    if (nodes.size() > 0){
+        SDL_SetRenderDrawColor(Window::renderer, 0, 0, 0, 255);
+        for (size_t i = 0; i < nodes.size() - 1; ++i) {
 
-    //Draw the map based on the bmp file loaded
-    for(int i = 0; i < ((Window::windowHeight - uIHeight) / mapScale); i++){
-        for(int j = 0; j < (Window::windowWidth / mapScale); j++){
+            
+            int currentLong = static_cast<int>(convertLongitudeToX(nodes[i].second));
+            int currentLat = static_cast<int>(convertLatitudeToY(nodes[i].first));
+            int nextLong = static_cast<int>(convertLongitudeToX(nodes[i+1].second));
+            int nextLat = static_cast<int>(convertLatitudeToY(nodes[i+1].first));
 
-            //Set coordinates of new pixel
-            newPixel.x = j * mapScale;
-            newPixel.y = (i + uIHeight) * mapScale;
-
-            //Get coordinates of pixels to check colour
-            pixel = *((Uint32*)surface->pixels + (mapTopLeftY + i) * surface->pitch / 4 + (mapTopLeftX + j));
-            SDL_GetRGB(pixel, surface->format, &red, &green, &blue);
-
-            if(red == 0 && green == 0 && blue == 0 ){
-                SDL_SetRenderDrawColor(Window::renderer, 34,139,34, 255);
-            }
-            else if(red == 21 && green == 152 && blue == 255){
-                SDL_SetRenderDrawColor(Window::renderer, 135,206,250, 255);
-            }
-
-            SDL_RenderFillRect(Window::renderer, &newPixel);
-            //SDL_RenderDrawPoint(Window::renderer, (j * mapScale), (i * mapScale));
-        
+            std::cout << "Drawing: " << currentLat << "," << currentLong << " to " << nextLat << "," << nextLong << std::endl;
+            
+            SDL_RenderDrawLine(Window::renderer, currentLong, currentLat, nextLong, nextLat);
+            
         }
+
     }
-    SDL_FreeSurface(surface);
-
-}
-
-void Map::renderUI(){
     
+}
 
-    SDL_Rect userInterface;
+int Map::convertLongitudeToX(double longitude){
+    double worldx = ORIGIN + longitude * PIXELS_PER_DEGREE;
     
+    const int scale = pow(2, zoomLevel);
+    double pixelCoordX = worldx * scale;
 
-    userInterface.w = Window::windowWidth;
-    userInterface.h = uIHeight;
-    userInterface.x = 0;
-    userInterface.y = 0;
-
-    SDL_SetRenderDrawColor(Window::renderer, 100,100,100, 255);
-
-    SDL_RenderFillRect(Window::renderer, &userInterface);
-
+    return pixelCoordX;
 
 }
 
-void Map::renderMissiles(){
-    for(int i = 0; i < missiles.size(); i++){
-        drawImageWithAngle(Window::renderer, "../images/mapIcons/missileOpp.png", missiles[i]->getPosX() - Map::mapTopLeftX, 
-        missiles[i]->getPosY() - Map::mapTopLeftY, 300- Map::mapTopLeftX, 200- Map::mapTopLeftY);
-    }
-}
-
-void Map::renderBorder(){
-
-}
-
-// CartesianLocation Map::geoToCartesian(const GeoLocation& location) {
-//     double x, y;
-//     location.toCartesian(x, y);
-//     return CartesianLocation(x, y);
-// }
-
-double Map::calculatePixelDistance(){
-    SDL_Surface* surface = SDL_LoadBMP("../images/map/landMap.bmp");
-    double pixelSize = Map::mapSize / surface->w;
-    std::cout << Map::mapSize << '\n';
-    std::cout << surface->w << '\n';
-    std::cout << pixelSize << '\n';
-    return pixelSize;
-}
-
-int Map::getMapWidth(std::string fileName){
-    SDL_Surface* surface = SDL_LoadBMP(fileName.c_str());
-    int width = surface->w;
-    SDL_FreeSurface(surface);
-    return width;
-}
-
-int Map::getMapHeight(std::string fileName){
-    SDL_Surface* surface = SDL_LoadBMP(fileName.c_str());
-    int height = surface->h;
-    SDL_FreeSurface(surface);
-    return height;
-}
-
-void Map::moveMapUp(){
-    int tempMove = mapTopLeftY - 10;
-    if(tempMove > 0 ){
-        mapTopLeftY = tempMove;
-    }
-}
-void Map::moveMapDown(){
-    int tempMove = mapTopLeftY + 10;
-    if(tempMove < (getMapHeight("../images/map/landMap.bmp") - ((Window::windowHeight + uIHeight) / mapScale))){
-        mapTopLeftY = tempMove;
-        std::cout << mapTopLeftY << "\n";
-    }
-}
-void Map::moveMapLeft(){
-    int tempMove = mapTopLeftX - 10;
-    if(tempMove > 0 ){
-        mapTopLeftX = tempMove;
-    }
-}
-void Map::moveMapRight(){
-    int tempMove = mapTopLeftX + 10;
-    if(tempMove < (getMapWidth("../images/map/landMap.bmp") - (Window::windowWidth / mapScale))){
-        mapTopLeftX = tempMove;
-    }
-}
-
-void Map::zoomIn(){
-    if(mapScale < 4){
-        mapScale = mapScale + 1;
-        std::cout << "Zoomed in" << "\n";
-    }
-}
-
-void Map::zoomOut(){
-    if(mapScale > 1){
-        mapScale = mapScale - 1;
-        std::cout << "Zoomed out" << "\n";
-    }
+int Map::convertLatitudeToY(double latitude){
+    double sinY = std::sin(latitude * M_PI/180);
+    sinY = std::min(std::max(sinY, -0.9999), 0.9999);
+    double worldy = ORIGIN + 0.5 * (std::log((1 + sinY) / (1 - sinY)) * -PIXELS_PER_RADIAN);
+    
+    const int scale = pow(2, zoomLevel);
+    double pixelCoordY = worldy * scale;
+    return pixelCoordY;
 }
 
 void Map::handleMouseButtonDown(SDL_MouseButtonEvent& b){
-    menu->handleMouseButtonDown(b);
+    if(b.button == SDL_BUTTON_LEFT){
+        int x, y;
+        SDL_GetMouseState(&x, &y);
+        setMouseClickPos(x,y);
+        std::cout << "This pixel is frame: x-" << std::floor(getMouseClickPosX() / TILE_SIZE) << " y-" << std::floor(getMouseClickPosY() / TILE_SIZE) << std::endl;
+    }
+}
+
+void Map::setMouseClickPos(int x, int y){
+    lastMousePosX = x;
+    lastMousePosY = y;
+}
+
+int Map::getMouseClickPosX(){
+    return lastMousePosX;
+}
+
+int Map::getMouseClickPosY(){
+    return lastMousePosY;
+}
+
+void Map::zoomIn(){
+    zoomLevel += 1;
 }

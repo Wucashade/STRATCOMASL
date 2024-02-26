@@ -360,3 +360,42 @@ events:
       
       
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.28.0/share/cmake/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.28.0/share/cmake/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "/opt/homebrew/Cellar/cmake/3.28.0/share/cmake/Modules/FindBZip2.cmake:93 (CHECK_SYMBOL_EXISTS)"
+      - "CMakeLists.txt:19 (find_package)"
+    checks:
+      - "Looking for BZ2_bzCompressInit"
+    directories:
+      source: "/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles/CMakeScratch/TryCompile-lrioQQ"
+      binary: "/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles/CMakeScratch/TryCompile-lrioQQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/cmake/"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "BZIP2_NEED_PREFIX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles/CMakeScratch/TryCompile-lrioQQ'
+        
+        Run Build Command(s): /opt/homebrew/Cellar/cmake/3.28.0/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e9ecd/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e9ecd.dir/build.make CMakeFiles/cmTC_e9ecd.dir/build
+        Building C object CMakeFiles/cmTC_e9ecd.dir/CheckSymbolExists.c.o
+        /usr/bin/clang   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -MD -MT CMakeFiles/cmTC_e9ecd.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_e9ecd.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_e9ecd.dir/CheckSymbolExists.c.o -c /Users/lukaszwasela/Documents/GitHub/STRATCOMASL/build/CMakeFiles/CMakeScratch/TryCompile-lrioQQ/CheckSymbolExists.c
+        Linking C executable cmTC_e9ecd
+        /opt/homebrew/Cellar/cmake/3.28.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9ecd.dir/link.txt --verbose=1
+        /usr/bin/clang  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e9ecd.dir/CheckSymbolExists.c.o -o cmTC_e9ecd  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libbz2.tbd 
+        
+      exitCode: 0
+...

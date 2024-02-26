@@ -55,7 +55,7 @@ void Window::update(){
 }
 
 void Window::render(){
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
     SDL_RenderClear(renderer);
 
@@ -88,25 +88,10 @@ void Window::eventManager()
                 break;
             case SDL_KEYDOWN:
                 switch(windowEvent.key.keysym.sym){
-                    case SDLK_UP:
-                        map->moveMapUp();
-                        break;
-                    case SDLK_DOWN:
-                        map->moveMapDown();
-                        break;
-                    case SDLK_RIGHT:
-                        map->moveMapRight();
-                        break;
-                    case SDLK_LEFT:
-                        map->moveMapLeft();
-                        break;
                     case SDLK_EQUALS:
                         map->zoomIn();
                         break;
-                    case SDLK_MINUS:
-                        map->zoomOut();
-                        break;
-                    
+
                     default:
                         break;
                 }
@@ -134,3 +119,4 @@ void Window::resize(int newWidth, int newHeight)
     Window::windowHeight = newHeight;
     Window::windowWidth = newWidth;
 }
+
