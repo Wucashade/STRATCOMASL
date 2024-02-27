@@ -9,7 +9,6 @@ void OsmDataHandler::way(const osmium::Way& way) {
     if((border && !std::strcmp(border, "administrative")) && (countryBorder && !std::strcmp(countryBorder, "2"))){ 
         for (const auto& node_ref : way.nodes()){
             
-            std::cout << node_ref.location() << std::endl;
             if(node_ref.location()){
                 administrativeBoundryNodes.emplace_back(std::make_pair(node_ref.location().lat(), node_ref.location().lon()));
             }

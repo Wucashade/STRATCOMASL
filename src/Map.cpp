@@ -57,7 +57,6 @@ void Map::renderBackground(){
             int nextLong = static_cast<int>(convertLongitudeToX(nodes[i+1].second));
             int nextLat = static_cast<int>(convertLatitudeToY(nodes[i+1].first));
 
-            std::cout << "Drawing: " << currentLat << "," << currentLong << " to " << nextLat << "," << nextLong << std::endl;
             
             SDL_RenderDrawLine(Window::renderer, currentLong, currentLat, nextLong, nextLat);
             
@@ -110,5 +109,13 @@ int Map::getMouseClickPosY(){
 }
 
 void Map::zoomIn(){
-    zoomLevel += 1;
+    if(zoomLevel < 11){
+        zoomLevel += 1;
+    }
+}
+
+void Map::zoomOut(){
+    if(zoomLevel > 1){
+        zoomLevel -= 1;
+    }
 }
